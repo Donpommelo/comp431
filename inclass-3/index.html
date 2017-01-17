@@ -1,69 +1,75 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!DOCTYPE html>
 <html lang="en-us">
-
 <head>
-	<title>A Simple Page</title>
-	<meta charset="utf-8">
+    <title>Hello HTML!</title>
+    <meta charset="utf-8">
 </head>
-
 
 <body>
 
-<form id="SimplePage" method="post" action="/proccesor" name="SimplePage">
-<h1>A Simple Page</h1>
-
-<p>Account Name: <input type="text" id="aname" name="accname" placeholder="Account Name" pattern="^[A-Za-z_-][A-Za-z0-9_-]*$" required></p>
-<p>Display Name (Optional): <input type="text" id="dname" name="disname" placeholder="Display Name"></p>
-<p>Email: <input type="email" id="email" name="email" placeholder="email@rice.edu" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></p>
-<p>Date of Birth: <input type="date" id="birth" name="bday" placeholder="Birthday" required></p>
-<p>Phone Number: <input type="tel" id="pnum" name="phone" placeholder="###-###-####" pattern="\d{3}-\d{3}-\d{4}" required></p>
-<p>Zipcode: <input type="text" id="zc" name="zipcode" pattern="[0-9]{5}" required></p>
-<p>Password: <input type="password" id="psw1" name="password1" required></p>
-<p>Reenter Password: <input type="password" id="psw2" name = "password2" required></p>
-
-<input type="submit" value="SUBMIT" onclick="return validateForm(this.parent)">
-<input type="reset" value="CLEAR"></form>
-<input type="hidden" name="timestamp" value=new Date()>
-
 <script>
 
-function validateForm(form){
-	
-	//update timestamp
-	document.getElementsByName("timestamp").innerHTML = new Date();
-		
-	//Validate date of birth
-	
-	var current = new Date();
-	var current_day = current.getDate() - 1;
-	var current_month = current.getMonth();
-	var current_year = current.getFullYear();
-	
-	if (!form) {
-		form = document.getElementById('birth');
-	}
-	
-	current.setFullYear(current_year-18, current_month, current_day);
-	
-	if(new Date(form.value) > current){
-		alert("ur 2 yung m8");
-		return False;		
-	}
-	
-	//Validate password
-	
-	var password1 = document.getElementById("psw1"); 
-	var password2 = document.getElementById("psw2"); 
-	if(password1.value != password2.value){
-		alert("ur passwords don't match");
-		return False;
-	}
-}
+setTimeout(function(){alert("the page will redirect when the counter reaches zero"); }, 5000);
 
 </script>
 
+<table border="1">
+	<tr><td>Athenian</td><td>Owl</td></tr>
+	<tr><td colspan="2"><img src="http://explore.rice.edu/uploadedImages/Explore/Welcome_to_Rice/riceacademicseal1.jpg"></td></tr>
+</table>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<ul>
+	<li><a href="http://www.rice.edu">Rice</a></li>
+	<li><a href="http://www.chron.com">Houston Chronicle</a></li>
+	<li><a href="http://www.twitter.com">Twitter</a></li>
+	<li><a href="http://www.twosigma.com">TwoSigma</a></li>
+</ul>
+
+<textarea id="textarea" rows="10" cols="50">
+
+
+ --- Enter your message here --- 
+
+
+</textarea>
+
+<p><button type="button" onclick="clearText()">Clear Text!</button></p>
+<p><h1>You have <span id="indicator">15</span> seconds remaining.</h1></p>
+<p><button type="button" onclick="pauseCD()">Pause Countdown!</button><button type="button" onclick="resumeCD()">Resume Countdown!</button></p>
+
+
+<script>
+
+var counting = true;
+
+setInterval(function(){
+	var indicator = document.getElementById("indicator").innerHTML;
+	
+	if(indicator<=0){
+		window.location="http://www.clear.rice.edu/comp431/sample/hello.html";
+	} else if(counting){
+		document.getElementById("indicator").innerHTML = indicator - 1;
+	}
+	
+	
+	}, 1000);
+
+
+function clearText() {
+    document.getElementById("textarea").value = "";
+}
+
+function pauseCD() {
+    counting = false;
+}
+
+function resumeCD() {
+    counting = true;
+}
+</script>
 </body>
-
-
-
-</html>
