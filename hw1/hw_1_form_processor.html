@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>A Simple Page</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Zachary Tu">
+</head>
+
+<body>
+
+<form id="SimplePage" action="hw_1_form_processor.html" method="get" name="SimplePage">
+<h1>A Simple Page</h1>
+<p>Account Name: <input type="text" id="aname" name="Account Name" placeholder="Account Name" pattern="^[A-Za-z][A-Za-z0-9]*$" required></p>
+<p>Display Name (Optional): <input type="text" id="dname" name="Display Name" placeholder="Display Name"></p>
+<p>Email: <input type="email" id="email" name="Email" placeholder="email@rice.edu" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></p>
+<p>Date of Birth: <input type="date" id="birth" name="Birthday" placeholder="Birthday" required></p>
+<p>Phone Number: <input type="tel" id="pnum" name="Phone Number" placeholder="###-###-####" pattern="\d{3}-\d{3}-\d{4}" required></p>
+<p>Zipcode: <input type="text" id="zc" name="Zipcode" pattern="[0-9]{5}" required></p>
+<p>Password: <input type="password" id="psw1" name="Password" required></p>
+<p>Reenter Password: <input type="password" id="psw2" name = "Password Confirmation" required></p>
+<input type="hidden" id="timestamp" name="Time" value="">
+<input type="submit" value="SUBMIT" onclick="return validateForm(this.parent)">
+<input type="reset" value="CLEAR"></form>
+
+<script>
+
+function validateForm(form){
+	
+	//update timestamp
+	document.getElementById("timestamp").value = new Date();
+		
+	//Validate date of birth
+	var current = new Date();
+	var current_day = current.getDate() - 1;
+	var current_month = current.getMonth();
+	var current_year = current.getFullYear();
+	
+	if (!form) {
+		form = document.getElementById('birth');
+	}
+	
+	current.setFullYear(current_year-18, current_month, current_day);
+	
+	if(new Date(form.value) > current){
+		alert("You must be age 18 or above.");
+		return False;		
+	}
+	
+	//Validate password
+	var password1 = document.getElementById("psw1"); 
+	var password2 = document.getElementById("psw2"); 
+	if(password1.value != password2.value){
+		alert("Your passwords don't match.");
+		return False;
+	}
+}
+
+</script>
+
+</body>
+
+
+
+</html>
