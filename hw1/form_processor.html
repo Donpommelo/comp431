@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>A Simple Page</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Zachary Tu">
+</head>
+
+
+<body>
+<h1>User Information</h1>
+<table id="forminputs" border=5>
+</table>
+
+<script>
+var inputs =  decodeURIComponent(window.location.search.substring(1)).split('&');
+for (var i = 0; i < inputs.length; i++) {
+    var pair = inputs[i].split('=');
+	if(pair[0]!="Password+Confirmation") {
+		var table = document.getElementById("forminputs");
+		var newrow = table.insertRow(-1);
+		var newcell1 = newrow.insertCell(0);
+		var newcell2 = newrow.insertCell(1);
+		newcell1.innerHTML = pair[0];
+		newcell2.innerHTML = pair[1];
+	}
+}
+</script>
+
+
+</body>
