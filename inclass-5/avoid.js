@@ -14,9 +14,14 @@ window.onLoad = function(){
 
 function buttonPress(){
 	if(running){
-		document.getElementById('runner').innerHTML = "Play Again?";
+		document.getElementById('runner').innerHTML="Play Again?";
+		document.getElementById('congrats').style.display='inline';
+		document.getElementById('border').style.display='inline';
 	}else{
 		document.getElementById('runner').innerHTML = "Click Me!";
+		document.getElementById('congrats').style.display='none';
+		document.getElementById('border').style.display='none';
+
 	}
 	running = !running;
 }
