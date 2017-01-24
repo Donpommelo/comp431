@@ -1,6 +1,11 @@
 
+//Is shift being pressed?
 var shiftPressed = false;
+
+//Is the button in run-mode?
 var running = true;
+
+//Is the button currently moving?
 var moving = false;
 
 window.onLoad = function(){
@@ -35,11 +40,15 @@ document.onmousemove = function(event) {
 
 		var bX = document.getElementById('runner').offsetLeft;
 		var bY = document.getElementById('runner').offsetTop;
+		
+		//Check if mouse is close enough to the button.
 		if(Math.pow(mX-bX, 2) + Math.pow(mY-bY, 2) < 20000){
 			moving = true;
 			var newX = 200+Math.random() * (window.screen.availWidth-400);
 			var newY = 200+Math.random() * (window.screen.availHeight-400);
 			var timer = 1;
+			
+			//cause button to move to randomly generated location.
 			var movement = setInterval(function(){
 				if(timer>=60){
 					moving = false;
