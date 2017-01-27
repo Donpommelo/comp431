@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="skyline.js"></script>
+	</head>
+	<body>	
+		<input id="build" type="button" value="Build">
+		<div style="position:fixed; top:3em; left:0em;">
+			<svg width="800" height="800">
+			<defs>
+				<linearGradient id="ground">
+					<stop offset="5%"  stop-color="green"/>
+					<stop offset="95%" stop-color="black"/>
+				</linearGradient>
+			</defs>
+			<rect x="0" y="400" width="800" height="400" fill="url(#ground)"></rect>
+			
+			<path d="M 0 0 L 900 0" dur="35s" id="sunpath"/>
+			<path d="M 900 400 L -100 400" dur="15s" id="carpath"/>
+			
+			<circle cx="0" cy="100" r="15" fill="yellow">
+			<animateMotion dur="6s" repeatCount="indefinite">
+			<mpath xlink:href="#sunpath"/>
+			</animateMotion></circle>
+			
+			<rect width="60" height="40" fill="red">
+			<animateMotion dur="6s" repeatCount="indefinite">
+			<mpath xlink:href="#carpath"/>
+			</animateMotion></circle>
+
+			</svg></div>
+	</body>
+</html>
