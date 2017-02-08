@@ -78,16 +78,15 @@ function updateElement(parent, newNode, oldNode, index=0) {
 
         const oldChildren = oldNode.children;
         const newChildren = newNode.children;
-
-        if (parent.id == "app") {
-            parent =  parent.childNodes[0];
+        if (parent) {
+            if (parent.id == "app") {
+                parent =  parent.childNodes[0];
+            }
         }
 
-        console.log(parent, oldNode, newNode);
-
         if (changed(oldNode, newNode)) {
+            console.log(parent, index);
             parent.childNodes[index].remove();
-            parent.appendChild(createElement(newNode));
         } else {
 
             if (oldChildren != null && Array.isArray(oldChildren) && newChildren != null && Array.isArray(newChildren)) {
@@ -98,7 +97,6 @@ function updateElement(parent, newNode, oldNode, index=0) {
                     } else if (i >= newChildren.length) {
                         parent.childNodes[i].remove();
                     } else {
-                        console.log(i);
                         updateElement(parent.childNodes[i], newChildren[i], oldChildren[i], i);
                     }
                 }
