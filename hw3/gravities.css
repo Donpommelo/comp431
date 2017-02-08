@@ -1,0 +1,27 @@
+body { 
+	background:#eee; background-color: lightgray; margin:0;
+}
+ 
+svg {
+  display:block; position:absolute; top:5%; left:25%; width:70%; height:90%; background:#000;
+}
+
+#sidebar {
+    display: block; width:25%;
+}
+
+#currencyAmount, #lives {
+    color: red; text-decoration: underline;
+}
+
+#earth {
+    fill: purple;
+}
+
+#notification {
+    border: 5px solid chartreuse;
+}
+
+#orbit1space:hover, #orbit2space:hover, #orbit3space:hover {
+    stroke: darkgrey;
+}
