@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<p>
+	<head>
+		<title>Satellites</title>
+		<meta charset="utf-8">
+		<meta name="author" content="Zachary Tu">
+		<script src="gravities.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="gravities.css">
+	</head>
+	<p>
+
+	<body>
+
+	<h1>Satellites</h1>
+	<p>High Score: <span id="hiScore">0</span></p>
+	<p>Current Score: <span id="curScore">0</span></p>
+	<p>Most simultaneous kills: <span id="hiChain">0</span></p>
+	<p>Lives: <span id="lives">6</span></p>
+
+	<span id="sidebar">
+
+		<div id="info"><p>You have <span id="currencyAmount">7</span> Satellite Part(s)!</p>
+			<p>Spend parts by:</p>
+			<p>1. Click locations in the orbit to place satellites.
+				Outer/Middle/Inner Ring Satellites cost 1/2/3 Satellite Part(s) respectively.</p>
+			<p>2. Use the buttons to upgrade towers or regain life.</p></div>
+
+		<p><button input id="plusLife" onclick="upgradeButton(this)">
+			Gain 1 Life! (Cost: 2 Satellite Parts)</button></p>
+		<p><button input id="plusDamage" onclick="upgradeButton(this)">
+			Increase Tower Damage (Cost: 2 Satellite Parts)</button></p>
+		<p><button input id="plusSpeed" onclick="upgradeButton(this)">
+			Increase Tower Fire Rate (Cost: 2 Satellite Parts)</button></p>
+		<p><button input id="plusRange" onclick="upgradeButton(this)">
+		Increase Tower Range (Cost: 2 Satellite Parts)</button></p>
+
+		<svg id="game" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000">
+		</svg>
+
+		<div id="notification"></div>
+	</span>
+
+	</body>
+</html>
