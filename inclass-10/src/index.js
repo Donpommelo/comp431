@@ -24,26 +24,24 @@ class ToDoItem extends React.Component {
     render() { return (
         <li id="task${_taskId++}">
             <h className="check glyphicon glyphicon-check" onClick={
-                () => this.props.done = !this.props.done
+                () => {
+                    if (!this.state.done) {
+                        this.textInput.className = "completed"
+                    } else {
+                        this.textInput.className = ""
+                    }
+                    this.state.done = !this.state.done
+                }
             }/>
-            <span contentEditable="true">
+            <span contentEditable="true" ref={
+                (node) => this.textInput = node
+            }>
                 {typeof(this.props.text) === "string" ? this.props.text : ""}
             </span>
             <i className="destroy glyphicon glyphicon-remove" onClick={
                 () => this.props.remove()
             }>[]</i>
         </li>
-
-        /*<li>
-        {this.props.text}
-        </li>
-
-        h("li", { id: `task${_taskId++}`}, [
-            h("i", { className: "check glyphicon glyphicon-check", onClick: toggleDone }, []),
-            h("span", { contentEditable: true, done: false }, typeof(text) === "string" ? text : ""),
-            h("i", { className: "destroy glyphicon glyphicon-remove", onClick: removeTask }, []),
-        ])
-        */
     )}
 }
 
@@ -98,24 +96,6 @@ class ToDos extends React.Component {
 
 
         </div>
-
-        /*<div>
-            <ul className="todo">
-                <ToDoItem key="1" text="Test Item" remove={() => this.removeTodo(1) } />
-            </ul>
-        </div>
-        // Hint: <input ... ref={ (node) => this.... = node } />
-
-        h("div", { },
-            h("input", { id: "newTODO", type: "text", placeholder: "To Do"}),
-            h("button", { onClick: addItem }, "Add Item"),
-            h("span", { className: "submit" }, [
-                h("a", { href: "https://webdev-rice.herokuapp.com",
-                     target: "_blank" }, "Submit your exercise"),
-            ]),
-            h("ul", { className: "todo" }, listItems)
-        )
-        */
     )}
 }
 
