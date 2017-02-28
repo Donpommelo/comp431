@@ -1,0 +1,66 @@
+[
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/8/88/Grabsteine_vom_alten_Gutsfriedhof_Sch%C3%B6neiche_09.JPG",
+    "text": "Hey, does anybody still use this site?",
+    "author": "Marty",
+    "date": "02/27/2017",
+    "id": 0,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Felino_seduto_sulle_scale.JPG",
+    "text": "hey look a picture of a cat",
+    "author": "Boris",
+    "date": "12/11/1991",
+    "id": 1,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Segovia_2012_aqueduc_1.jpg",
+    "text": "Visiting the Segovia aqueduct with the familials.",
+    "author": "Sneaky Pete",
+    "date": "02/03/1982",
+    "id": 2,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/1/16/Sketches%2C_New_and_Old._p096.jpg",
+    "text": "How repeatedly pressing 'random file' on wikimedia didn't help at all.",
+    "author": "Jarlsberg",
+    "date": "11/23/1980",
+    "id": 3,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/d/db/Church_in_Avebury_01.jpg",
+    "text": "This window looks funny.",
+    "author": "Fernswarthy",
+    "date": "01/26/1978",
+    "id": 4,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Libius_Severus_solidus_612158_%28obverse%29.jpg",
+    "text": "Does anyone know how much this is worth?",
+    "author": "Ralph XI",
+    "date": "10/23/1975",
+    "id": 5,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/f/f3/J%C3%B3zsef_K%C3%A1roly_f%C5%91herceg_%281902%29_1905-25.jpg",
+    "text": "I'm posting a picture of an old person on your wall and there isn't anything you can do about it.",
+    "author": "Hodgman",
+    "date": "6/11/1970",
+    "id": 6,
+    "visible": true
+  },
+  {
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Caricaturepoteau.jpeg",
+    "text": "I can't speak French and what is this",
+    "author": "Gnorbert",
+    "date": "02/23/1965",
+    "id": 7,
+    "visible": true
+  }
+]
