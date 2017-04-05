@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src\components\main\main.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/main/</a> main.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.11% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.38% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.42% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/33</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">7 statements, 1 function, 3 branches</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
+&nbsp;
+import Nav from './nav'
+import Headline from './headline'
+import Followers from './followers'
+import Articles from '../article/article'
+import ArticleView from '../article/articleView'
+import { addFollow } from './followingActions'
+import { filterArticles } from '../article/articleActions'
+import { initialize } from '../../actions'
+&nbsp;
+export const Main = <span class="fstat-no" title="function not covered" >({ <span class="cstat-no" title="statement not covered" >message, followers, articles, follow, filter, init }) =&gt; {</span></span>
+&nbsp;
+    //This runs once upon logging in. Sets up all account info from server
+    if (<span class="cstat-no" title="statement not covered" >message.indexOf('Login Successful!') == 0 &amp;&amp; articles.length == 0 &amp;&amp; followers.length == 0) {</span>
+        init()
+    }
+&nbsp;
+    let <span class="cstat-no" title="statement not covered" >newFollow, filterKeyword;</span>
+&nbsp;
+    const <span class="cstat-no" title="statement not covered" >_addFollow = <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+        if (<span class="cstat-no" title="statement not covered" >newFollow &amp;&amp; followers) {</span>
+            follow(<span class="cstat-no" title="statement not covered" >newFollow.value, followers);</span>
+            newFollow.<span class="cstat-no" title="statement not covered" >value='';</span>
+        }
+    };
+&nbsp;
+    const <span class="cstat-no" title="statement not covered" >_filterArticles = <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+        if (<span class="cstat-no" title="statement not covered" >filterKeyword) {</span>
+            filter(<span class="cstat-no" title="statement not covered" >filterKeyword.value);</span>
+            filterKeyword.<span class="cstat-no" title="statement not covered" >value='';</span>
+        }
+    };
+&nbsp;
+    return (
+<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
+            &lt;Nav/&gt;
+            &lt;Headline/&gt;
+&nbsp;
+            &lt;div id="followList"&gt;
+                &lt;input type="text" id="newFollowName" placeholder="Follow Another User" ref={<span class="fstat-no" title="function not covered" >(node) =&gt; <span class="cstat-no" title="statement not covered" >newFollow = node} /&gt;</span></span>
+                &lt;button id="newFollowAdd" onClick={_addFollow}&gt;Follow&lt;/button&gt;
+                &lt;ul id="visibleFollowers"&gt;
+                    {followers.map(<span class="fstat-no" title="function not covered" >(name) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Followers key={name} name={name} /&gt;</span>
+                    ))}
+                &lt;/ul&gt;
+            &lt;/div&gt;
+&nbsp;
+&nbsp;
+            &lt;div id="articleList"&gt;
+                &lt;input id="filterKeyword" type="text" placeholder="Filter Articles" ref={<span class="fstat-no" title="function not covered" >(node) =&gt; <span class="cstat-no" title="statement not covered" >filterKeyword = node} /&gt;</span></span>
+                &lt;button id="articleFilter" onClick={_filterArticles}&gt;Filter&lt;/button&gt;
+                &lt;ArticleView key={1} articles={articles}/&gt;
+             &lt;/div&gt;
+            
+            
+            &lt;b id="message"&gt;{message}&lt;/b&gt;
+        &lt;/div&gt;
+    )
+};
+&nbsp;
+Main.propTypes = {
+    message: PropTypes.string.isRequired,
+    followers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    articles: PropTypes.arrayOf(PropTypes.shape({
+        ...Articles.propTypes
+    }).isRequired).isRequired,
+    follow: PropTypes.func.isRequired,
+    filter: PropTypes.func.isRequired,
+    init: PropTypes.func.isRequired
+};
+&nbsp;
+export default connect(
+<span class="fstat-no" title="function not covered" >    (state) =&gt; (<span class="cstat-no" title="statement not covered" >{ message: state.message, followers: state.followers, articles: state.articles }),</span></span>
+<span class="fstat-no" title="function not covered" >    (dispatch) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+        follow: <span class="fstat-no" title="function not covered" >(newFollow, follows) =&gt; <span class="cstat-no" title="statement not covered" >addFollow(newFollow, follows)(dispatch),</span></span>
+        filter: <span class="fstat-no" title="function not covered" >(keyword) =&gt; <span class="cstat-no" title="statement not covered" >filterArticles(keyword)(dispatch),</span></span>
+        init: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >initialize()(dispatch),</span></span>
+    })
+)(Main)
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Apr 05 2017 13:56:38 GMT-0600 (Central Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
