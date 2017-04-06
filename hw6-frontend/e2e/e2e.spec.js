@@ -240,7 +240,7 @@ describe('Test End to End Frontend', () => {
         .then(findId('newProfileInfo').click())
         .then(findId('message').getText()
             .then(text => {
-                expect(text).to.equal('You cannot update your password, Sorry.')
+                expect(text).to.contain('You cannot update your password')
             })
             .then(findId('navigation').click())
             .then(sleep(2000))
