@@ -12,7 +12,6 @@ describe('Test End to End Authentication', () => {
         .then(findId('regisEmail').clear())
         .then(findId('regisPhone').clear())
         .then(findId('regisZip').clear())
-        .then(findId('regisBirth').clear())
         .then(findId('regisName').sendKeys('1'))
         .then(findId('regisPw1').sendKeys('1'))
         .then(findId('regisPw2').sendKeys('1'))
@@ -92,7 +91,7 @@ describe('Test End to End Frontend', () => {
         const newArticle = 'test article.'
 
         sleep(500)
-        .then(findId('visibleArticles').findElement(By.className('singleArticle'))
+        .then(findId('visibleArticles').findElements(By.className('singleArticle'))
             .then((articles) => {
                 articles[0].findElement(By.id('editBegin')).click()
                 .then(sleep(1000))
@@ -100,7 +99,9 @@ describe('Test End to End Frontend', () => {
                 .then(articles[0].findElement(By.id('articleEdits')).sendKeys(newArticle))
                 .then(articles[0].findElement(By.id('editArticle')).click())
                 .then(sleep(1000))
-                .then(response => expect(response).to.eql(newArticle))
+                .then(articles[0].findElement(By.id('articleText')).getText()
+                    .then(response => expect(response).to.eql(newArticle))
+                )
             })
         )
         .then(done)
@@ -124,13 +125,26 @@ describe('Test End to End Frontend', () => {
         .catch(done)
     })
 
-    it('should add the user "Follower" to the list of followed users and verify the count increases by one', (done) => {
+
+    //Verify that we are getting aninteger length by counting the followed user list.
+    it('should Count the number of followed users', (done) => {
         sleep(500)
         .then(findId('followList').findElements(By.className('follower'))
-            .then(list => {const listLength = list.length}))
+            .then(list => expect(list.length).to.be.greaterThan(0)))
+        .then(done)
+        .catch(done)
+    })
+
+    it('should add the user "Follower" to the list of followed users and verify the count increases by one', (done) => {
+        
+        let listLength;
+
+        sleep(500)
+        .then(findId('followList').findElements(By.className('follower'))
+            .then(list => { listLength = list.length}))
         .then(findId('newFollowName').clear())
         .then(findId('newFollowName').sendKeys('Follower'))
-        .then(findId('newFollowadd').click())
+        .then(findId('newFollowAdd').click())
         .then(sleep(2000))
         .then(findId('followList').findElements(By.className('follower'))
             .then((list) => expect(listLength + 1).to.eql(list.length)))
@@ -138,9 +152,12 @@ describe('Test End to End Frontend', () => {
     })
 
     it('should remove the user "Follower" from the list of followed users and verify the count decreases by one', (done) => {
+        
+        let listLength;
+
         sleep(500)
         .then(findId('followList').findElements(By.className('follower'))
-            .then(list => {const listLength = list.length}))
+            .then(list => { listLength = list.length}))
         .then(findId('followList').findElements(By.className('follower'))
             .then(list => list[list.length-1].findElement(By.id('unfollow')).click())
             .then(sleep(2000))
@@ -156,7 +173,7 @@ describe('Test End to End Frontend', () => {
         sleep(500)
         .then(findId('filterKeyword').clear())
         .then(findId('filterKeyword').sendKeys('Only One Article Like This'))
-        .then(findId('articleFilter')).click()
+        .then(findId('articleFilter').click())
         .then(sleep(2000))
         .then(findId('visibleArticles').findElements(By.className('singleArticle'))
             .then((articles) => {
@@ -182,7 +199,7 @@ describe('Test End to End Frontend', () => {
         .then(sleep(2000))
         .then(findId('currentEmail').getText()
             .then(text => {
-                expect(text).to.equal(newEmail)
+                expect(text).contain(newEmail)
             })
             .then(findId('navigation').click())
             .then(sleep(2000))
@@ -191,17 +208,18 @@ describe('Test End to End Frontend', () => {
     })
 
     it('should navigate to the profile view, Update the users zipcode and verify', (done) => {
-       
+
         const newZipcode = "77479"
 
         sleep(500)
         .then(findId('toProfile').click())
         .then(findId('newZip').clear())
-        .then(findId('newZip').sendKeys(newEmail))
+        .then(findId('newZip').sendKeys(newZipcode))
         .then(findId('newProfileInfo').click())
+        .then(sleep(2000))
         .then(findId('currentZip').getText()
             .then(text => {
-                expect(text).to.equal(newZipcode)
+                expect(text).contain(newZipcode)
             })
             .then(findId('navigation').click())
             .then(sleep(2000))
@@ -222,15 +240,11 @@ describe('Test End to End Frontend', () => {
         .then(findId('newProfileInfo').click())
         .then(findId('message').getText()
             .then(text => {
-                expect(text).to.equal('You cannot update your password, Sorry. ')
+                expect(text).to.equal('You cannot update your password, Sorry.')
             })
             .then(findId('navigation').click())
             .then(sleep(2000))
             .then(done))
         .catch(done)
-    })
-
-    after('should log out', (done) => {
-        common.logout().then(done)
     })
 })
