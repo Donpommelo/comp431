@@ -1,0 +1,129 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    height: 10%;
+    left: 50%;
+    top: 5%;
+}
+
+img {
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    color: white;
+    background-color: blue;
+    text-align: center;
+    border-radius: 25%
+}
+
+#app {
+    position: relative;
+}
+
+#message {
+    width: 15%;
+    height: 25%;
+    left: 0;
+    top: 10%;
+    position: fixed;
+}
+
+#login, #register, #currentInfo, #updateInfo, #avatar, #headline, #followList, #newArticle, #articleList {
+    border: 3px solid #73AD21;
+    position: fixed;
+    overflow: auto;
+}
+
+#login {
+    width: 30%;
+    height: 50%;
+    left: 15%;
+    top: 40%;
+}
+
+#register {
+    width: 30%;
+    height: 50%;
+    right: 15%;
+    top: 40%;
+}
+
+#currentInfo {
+    width: 25%;
+    height: 40%;
+    left: 20%;
+    bottom: 5%;
+}
+
+#updateInfo {
+    width: 40%;
+    height: 50%;
+    right: 10%;
+    bottom: 5%;
+}
+
+#avatar {
+    width: 25%;
+    height: 45%;
+    left: 20%;
+    top: 0;
+}
+
+#newAva {
+    bottom: 0;
+    left: 20%;
+    position: absolute;
+}
+
+#navigation {
+    width: 10%;
+    height: 10%;
+    top:0;
+    left:0;
+    position: fixed;
+    overflow: auto;
+}
+
+#headline {
+    width: 30%;
+    height: 45%;
+    left: 20%;
+    top: 0;
+}
+
+#followList {
+    width: 30%;
+    height: 45%;
+    left: 20%;
+    top: 50%;
+}
+
+#newArticle {
+    width: 40%;
+    height: 25%;
+    right: 5%;
+    top: 10%;
+}
+
+#articleList {
+    width: 40%;
+    height: 50%;
+    right: 5%;
+    top: 40%;
+}
+
+#follow,#article {
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+
+.comment {
+    color:red;
+}
