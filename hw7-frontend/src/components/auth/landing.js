@@ -3,8 +3,12 @@ import { connect } from 'react-redux'
 
 import Login from './login';
 import Register from './register';
+import { refreshLogin } from './authActions'
 
-export const Landing = ({ message }) => {
+
+export const Landing = ({ message, refreshLogin }) => {
+
+    refreshLogin()
 
     return (
         <div>
@@ -18,9 +22,12 @@ export const Landing = ({ message }) => {
 
 Landing.propTypes = {
     message: PropTypes.string.isRequired,
+    refreshLogin : PropTypes.func.isRequired,
 };
 
 export default connect(
     (state) => ({ message: state.message }),
-    (dispatch) => ({ })
+    (dispatch) => ({ 
+        refreshLogin: () => refreshLogin()(dispatch)
+    })
 )(Landing)
