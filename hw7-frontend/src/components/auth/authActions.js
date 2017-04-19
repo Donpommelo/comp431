@@ -1,4 +1,5 @@
 import * as Actions from '../../actions'
+import { initialize } from '../../actions'
 
 export const loginAuth = (username, password) => (dispatch) => {
     Actions.resource('POST', 'login', { username , password })
@@ -59,3 +60,16 @@ export const logoutAuth = () => (dispatch) => {
     })
     .catch(r => Actions.error('Error occurred when logging out')(dispatch))
 };
+
+export const refreshLogin = () => (dispatch) => {
+    Actions.resource('GET', 'refresh')
+    .then(r => {
+        if (r) {
+            if(r.isLoggedin) {
+                dispatch({type: 'NAVIGATE', currentPage:"MAIN_PAGE"})
+                initialize()(dispatch)
+                dispatch({type: 'UPDATE', field: 'username', newVal: r.username})
+            }
+        }
+    })
+}
